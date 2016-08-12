@@ -33,7 +33,7 @@ This extension is copyright [Mark Trapp][3]. All Rights Reserved. It is made ava
 
 ## Disclosure and disclaimer
 
-I am an employee of [Acquia Inc.][4], the author of the HTTP HMAC Spec. This extension was created as a personal project and had no Acquia involvement. Likewise, this development of this extension has had involvement from [Paw Inc.][5], the developers of Paw, with whom I am not affiliated in any way.
+I am an employee of [Acquia Inc.][4], the author of the HTTP HMAC Spec. This extension was created as a personal project and had no Acquia involvement. Likewise, the development of this extension has no involvement from [Paw Inc.][5], the developers of Paw, with whom I am not affiliated in any way.
 
 [1]: http://luckymarmot.com/paw/extensions/
 [2]: https://github.com/acquia/http-hmac-spec/tree/1.0
