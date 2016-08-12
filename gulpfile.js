@@ -6,7 +6,7 @@ var path    = require('path');
 var webpack = require('webpack-stream');
 
 const id = 'com.marktrapp';
-const name = 'HttpHmacV1';
+const name = 'HttpHmacV2';
 
 const extFile = './src/' + name + '.js';
 

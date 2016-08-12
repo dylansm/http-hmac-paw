@@ -1,6 +1,6 @@
 # HTTP HMAC Signer for Paw
 
-A [Paw extension][1] that implements version 1.0 of the [HTTP HMAC Spec][2] to sign and verify RESTful web API requests.
+A [Paw extension][1] that implements version 2.0 of the [HTTP HMAC Spec][2] to sign and verify RESTful web API requests.
 
 ## Installation
 
@@ -18,14 +18,36 @@ You can confirm the extension is installed in Paw by opening the extensions mana
 
 ## Usage
 
-1. In the request panel, select the **Headers** tab.
-2. Add a new header.
-3. For the **Header Name**, type "Authorization".
-4. For the **Header Value**, start typing "HTTP HMAC". The autocomplete drop-down will suggest "HTTP HMAC Spec 1.0": select it.
-5. Click on the "HTTP HMAC 1.0 signature" token to open a popup where you can supply your credentials.
-6. Fill in the required credentials.
-7. Add "Content-Type" and "Date" headers, required for the HTTP HMAC spec.
-8. Make your request.
+Signing requests with HTTP HMAC Spec v2 involves a number of required headers, outlined below. Once the headers are supplied, you can make requests as per normal Paw usage.
+
+### X-Authorization-Timestamp
+
+This header is required for all requests. For this header's value, find and select the <kbd>**Timestamp** *Epoch Time*</kbd> dynamic value token. There is no additional configuration.
+
+### X-Authorization-Content-SHA256
+
+This header is required if you have a request body. For this header's value, find and select the <kbd>**SHA256**</kbd> dynamic value token. Then, click on the token to bring up its configuration:
+
+- **Input**: Find and select the <kbd>**Request Raw Body**</kbd> dynamic value token.
+- **Algorithm:** SHA256
+- **Encoding:** Base64
+
+### Content-Type
+
+This header is required if you have a request body. For this header's value, use whatever mimetype is appropriate for your request body.
+
+### Authorization
+
+This header is required for all requests. For this header's value, find and select the <kbd>**HTTP HMAC Spec** *Signature v2.0*</kbd> dynamic value token. Then, click on the token to bring up its configuration:
+
+- **Realm**: Use the Realm supplied by the API documentation.
+- **API Key ID**: Use the API Key ID given to you.
+- **API Secret Key**: Use the API Secret Key given to you. This *must* be Base64-encoded if it isn't already.
+- **Request**: Advanced usage; you can usually just leave this set to "Current Request"
+
+## Known Issues
+
+The extension doesn't currently support signing requests with additional custom headers.
 
 ## License and copyright
 

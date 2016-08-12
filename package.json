@@ -17,10 +17,10 @@
     "main": "HttpHmacV1.js",
     "repository": "itafroma/http-hmac-paw",
     "dependencies": {
+        "crypto-js": "~3.1.6",
         "del": "~2.2.0",
         "event-stream": "~3.3.2",
         "gulp": "~3.9.1",
-        "jssha": "~2.0.2",
         "url": "~0.11.0",
         "webpack": "~1.12.14",
         "webpack-stream": "~3.1.0"

@@ -1,7 +1,7 @@
 var path = require('path');
 
 const id = 'com.marktrapp';
-const name = 'HttpHmacV1';
+const name = 'HttpHmacV2';
 
 const extFile = './src/' + name + '.js';
 
